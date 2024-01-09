@@ -20,6 +20,10 @@ app.get('/now', (req, res, next) => {
   next();
 });
 
+app.get('/now', (req, res) => {
+  res.json({ time: req.time });
+});
+
 app.use('/public', express.static(__dirname + '/public'));
 
 app.get('/json', (req, res) => {
