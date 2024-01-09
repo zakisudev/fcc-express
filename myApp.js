@@ -34,6 +34,19 @@ app.get('/:word/echo', (req, res) => {
   });
 });
 
+app
+  .route('/name')
+  .get((req, res) => {
+    res.send({
+      name: `${req.query.first} ${req.query.last}`,
+    });
+  })
+  .post((req, res) => {
+    res.send({
+      name: `${req.body.first} ${req.body.last}`,
+    });
+  });
+
 app.use('/public', express.static(__dirname + '/public'));
 
 app.get('/json', (req, res) => {
