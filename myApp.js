@@ -20,7 +20,7 @@ app.get('/json', (req, res) => {
   res.json({ message });
 });
 
-app.use((req, res, next) => {
+app.use('/', (req, res, next) => {
   console.log(`${req.method} ${req.path} - ${req.ip}`);
   next();
 });
