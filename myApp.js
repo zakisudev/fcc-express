@@ -28,6 +28,12 @@ app.get(
   }
 );
 
+app.get('/:word/echo', (req, res) => {
+  res.send({
+    echo: req.params.word,
+  });
+});
+
 app.use('/public', express.static(__dirname + '/public'));
 
 app.get('/json', (req, res) => {
